@@ -8,7 +8,7 @@ This repository contains a full-custom hardware abstraction layer (HAL) designed
 ### Hardware
 - **Microcontroller**: STM32F030 R8T6
 - **Programmer:** ST-Link V2
-- **Signal Conditioning:** ULN2003
+- **Level Shifter:** ULN2003
 - **Output:** 16x2 Character LCD
 ### Challenge & Solution
 Because the STM32 operates at 3.3V and the LCD operates at 5V, we utilized ULN2003 to step up the voltage. We implemented a software inversion layer within LCD_HIGH() and LCD_LOW() and swapped the BSRR (Bit Set/Reset Register) logic in the driver. We ensured that the high-level application code remains intuitive while the hardware signals are correctly translated for the inverted hardware
